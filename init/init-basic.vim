@@ -169,4 +169,8 @@ set wildignore+=*.gba,*.sfc,*.078,*.nds,*.smd,*.smc
 set wildignore+=*.linux2,*.win32,*.darwin,*.freebsd,*.linux,*.android
 
 
-
+"开启鼠标
+set  mouse=a
+"禁用蜂鸣声
+set visualbell
+set vb t_vb=
