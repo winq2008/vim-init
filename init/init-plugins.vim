@@ -15,7 +15,7 @@
 "----------------------------------------------------------------------
 if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
-	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
+	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'nerdtree-git-plugin', 'ale', 'echodoc']
 	let g:bundle_group += ['leaderf']
 endif
 
@@ -316,6 +316,26 @@ if index(g:bundle_group, 'nerdtree') >= 0
 	noremap <space>no :NERDTreeFocus<cr>
 	noremap <space>nm :NERDTreeMirror<cr>
 	noremap <space>nt :NERDTreeToggle<cr>
+endif
+
+"----------------------------------------------------------------------
+" NERDTree git 
+"----------------------------------------------------------------------
+if index(g:bundle_group,'nerdtree-git-plugin') >= 0
+   Plug 'Xuyuanp/nerdtree-git-plugin'
+   " nerdtree-git-plugin
+   let g:NERDTreeGitStatusIndicatorMapCustom = {
+            \ "Modified"  : "✹",
+            \ "Staged"    : "✚",
+            \ "Untracked" : "✭",
+            \ "Renamed"   : "➜",
+            \ "Unmerged"  : "═",
+            \ "Deleted"   : "✖",
+            \ "Dirty"     : "✗",
+            \ "Clean"     : "✔︎",
+            \ 'Ignored'   : '☒',
+            \ "Unknown"   : "?"
+            \ }
 endif
 
 
