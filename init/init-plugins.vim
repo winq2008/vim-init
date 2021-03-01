@@ -15,8 +15,9 @@
 "----------------------------------------------------------------------
 if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
-	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'nerdtree-git-plugin', 'ale', 'echodoc']
+	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'nerdtree-git-plugin', 'vim-nerdtree-syntax-highlight', 'vim-devicons', 'ale', 'echodoc']
 	let g:bundle_group += ['leaderf']
+	let g:bundle_group +=['asyncrun.extra', 'vim-terminal-help']
 endif
 
 
@@ -337,7 +338,14 @@ if index(g:bundle_group,'nerdtree-git-plugin') >= 0
             \ "Unknown"   : "?"
             \ }
 endif
-
+" NerdTree文件类型高亮
+if index(g:bundle_group, 'vim-nerdtree-syntax-highlight') >= 0
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+endif
+" 显示文件类型图标
+if index(g:bundle_group, 'vim-devicons') >= 0
+	Plug 'ryanoasis/vim-devicons'
+endif
 
 "----------------------------------------------------------------------
 " LanguageTool 语法检查
@@ -679,6 +687,13 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " css 颜色预览插件
 Plug 'ap/vim-css-color'
+" 现代化的构建任务系统
+if index(g:bundle_group, 'asyncrun.extra') >= 0
+	Plug 'skywind3000/asyncrun.extra'
+endif
+if index(g:bundle_group, 'vim-terminal-help') >= 0
+	Plug 'skywind3000/vim-terminal-help'
+endif
 "----------------------------------------------------------------------
 " 结束插件安装
 "----------------------------------------------------------------------

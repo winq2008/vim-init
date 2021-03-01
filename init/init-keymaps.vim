@@ -330,3 +330,6 @@ else
 				\ '<root>' <cr>
 endif
 
+" 切分后的窗口大小调整
+nmap    wh  :vertical resize +9<CR>
+nmap    wl  :vertical resize -9<CR>
